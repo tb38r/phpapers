@@ -20,6 +20,7 @@ class PaperFactory extends Factory
         return [
             'workspace_id' => Workspace::factory(),
             'title' => ucfirst($this->faker->bs),
+            'content' => $this->faker->realText(50), 
         ];
     }
 }

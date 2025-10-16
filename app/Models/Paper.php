@@ -18,8 +18,5 @@ class Paper extends Model
         return $this->belongsTo(Workspace::class);
     }
 
-    public function eloquentNotes()
-    {
-        return $this->hasMany(EloquentNote::class);
-    }
+
 }

@@ -23,11 +23,7 @@ class WorkspaceSeeder extends Seeder
                 ->count(rand(2, 5))
                 ->create(['workspace_id' => $workspace->id]);
 
-            foreach ($papers as $paper) {
-                EloquentNote::factory()
-                    ->count(rand(2, 7))
-                    ->create(['paper_id' => $paper->id]);
-            }
+       
         }
     }
 }

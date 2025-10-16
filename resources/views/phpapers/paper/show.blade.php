@@ -8,8 +8,8 @@
     <h3 class="mt-4">Notes</h3>
     <br>
     <ul>
-        @foreach ($paper->eloquentNotes as $note)
-            <li>{{ $note->content }}</li>
+        @foreach ($workspace->papers as $paper)
+            <li>{{ $paper->content }}</li>
         @endforeach
     </ul>
 </x-layout>

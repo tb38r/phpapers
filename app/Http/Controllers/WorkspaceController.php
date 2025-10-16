@@ -18,7 +18,7 @@ class WorkspaceController extends Controller
 
     public function workspace($id)
     {
-        $workspace = Workspace::with('papers.eloquentNotes')->findOrFail($id);
+        $workspace = Workspace::with('papers')->findOrFail($id);
         return view('phpapers.workspace.index', ["workspace" => $workspace]);
     }
 

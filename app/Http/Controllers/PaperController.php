@@ -12,8 +12,6 @@ class PaperController extends Controller
 {
    
 
-    $paper->load('eloquentNotes');
-
     return view('phpapers.paper.show', compact('workspace', 'paper'));
 }
 
