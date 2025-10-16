@@ -21,7 +21,8 @@
 
             </a>
         </div>
-        <form method="POST" action="{{ route('workspace.destroy', $workspace->id) }}">
+        <form method="POST" action="{{ route('workspace.destroy', $workspace->id) }}"
+            onsubmit="return confirm('Are you sure you want to delete this workspace?')">
             @csrf
             @method('DELETE')
             <button type="submit" class="text-red-500 text-sm hover:underline">Delete</button>
