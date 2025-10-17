@@ -28,7 +28,7 @@ class WorkspaceController extends Controller
         if (! $workspace->delete()) {
             abort(500, 'Workspace deletion failed.');
         }
-        return redirect()->back()->with('delete-status', "Workspace '{$workspace_to_delete}' deleted");
+        return redirect()->back()->with('destroy-status', 'Workspace ' . $workspace_to_delete . ' deleted');
     }
 
     public function store(Request $request)

@@ -1,17 +1,17 @@
 <x-layout title="{{ $workspace->name }}">
-    <h1>{{ $workspace->name }}</h1>
-    <p>{{ $workspace->description }}</p>
+    <b><h1>{{ $workspace->name }}</h1></b>
+    <b><h3>{{ $workspace->description }}</h3></b>
 
-    <h2 class="mt-6">Papers</h2>
     <br>
-    <ul>
-        @foreach ($workspace->papers as $paper)
-            <a href="{{ route('paper.show', [$workspace->id, $paper->id]) }}">
-                <li class="mb-4">
-                    <h3>{{ $paper->title }}</h3>
+<div class="grid grid-cols-3 gap-4">
+    @foreach ($workspace->papers as $paper)
+        <x-paper-card
+            :workspaceId="$workspace->id"
+            :paper="$paper"
+        />
+    @endforeach
+</div>
 
-                </li>
-            </a>
-        @endforeach
-    </ul>
+
+
 </x-layout>
