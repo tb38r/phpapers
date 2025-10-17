@@ -19,6 +19,11 @@ Route::delete('/{workspace}', [WorkspaceController::class, 'destroy'])->name('wo
 //Create a workspace
 Route::post('/workspace', [WorkspaceController::class, 'store'])->name(('workspace.store'));
 
+//Delete a paper
+Route::delete('/workspaces/{workspace}/papers/{paper}', [PaperController::class, 'destroy'])->name('paper.destroy');
+
+
+
 Route::get('/wys', function () {
     return view('phpapers.wysiwyg');
 });

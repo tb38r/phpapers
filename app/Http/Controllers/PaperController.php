@@ -15,6 +15,16 @@ class PaperController extends Controller
     return view('phpapers.paper.show', compact('workspace', 'paper'));
 }
 
+public function destroy(Workspace $workspace, Paper $paper)
+{
+    if ($paper->workspace_id !== $workspace->id) {
+        abort(403);
+    }
+
+    $paper->delete();
+    return redirect()->route('workspace.show', $workspace);
+;
+}
 // public function edit(Workspace $workspace, Paper $paper)
 // {
 //     // Authorization and ownership checks here
