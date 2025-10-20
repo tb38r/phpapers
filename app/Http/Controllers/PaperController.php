@@ -40,6 +40,18 @@ class PaperController extends Controller
         ]);
         return redirect()->route('workspace.show', $workspace);
     }
+
+    public function save(Request $request, Workspace $workspace, Paper $paper)
+{
+    $validated = $request->validate([
+        'content' => 'nullable|string',
+    ]);
+
+    $paper->update(['content' => $validated['content']]);
+
+    return response()->json(['status' => 'saved']);
+}
+
     // public function edit(Workspace $workspace, Paper $paper)
     // {
     //     // Authorization and ownership checks here

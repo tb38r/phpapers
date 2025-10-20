@@ -3,6 +3,13 @@
 use App\Http\Controllers\PaperController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WorkspaceController;
+use App\Models\Workspace;
+use App\Models\Paper;
+
+Route::get('/editor/{workspace}/{paper}', function (Workspace $workspace, Paper $paper) {
+    return view('phpapers.wysiwyg', compact('workspace', 'paper'));
+})->scopeBindings();
+
 
 //show all workspaces on the homepage
 Route::get('/', [WorkspaceController::class, 'home'])->name('home');
@@ -26,7 +33,10 @@ Route::delete('/workspaces/{workspace}/papers/{paper}', [PaperController::class,
 //show all notes belonging to a paper
 Route::get('/workspace/{workspace}/paper/{paper}', [PaperController::class, 'show'])->name('paper.show')->scopeBindings();
 
+//show wysiwig editor
+Route::post('/workspace/{workspace}/paper/{paper}/save', [PaperController::class, 'autosave'])->name('paper.save')->scopeBindings();
 
-Route::get('/wys', function () {
-    return view('phpapers.wysiwyg');
-});
+
+Route::get('/editor/{workspace}/{paper}', function (Workspace $workspace, Paper $paper) {
+    return view('phpapers.wysiwyg', compact('workspace', 'paper'));
+})->scopeBindings();
