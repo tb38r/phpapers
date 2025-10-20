@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Paper;
 use App\Models\Workspace;
+use Illuminate\Support\Facades\Log;
+
 
 class PaperController extends Controller
 {
     public function show(Workspace $workspace, Paper $paper)
     {
+        $content = $paper->content ?? '';
 
 
-        return view('phpapers.paper.show', compact('workspace', 'paper'));
+        return view('phpapers.wysiwyg', compact('workspace', 'paper', 'content'));
     }
 
     public function destroy(Workspace $workspace, Paper $paper)
@@ -52,15 +55,7 @@ class PaperController extends Controller
     return response()->json(['status' => 'saved']);
 }
 
-    // public function edit(Workspace $workspace, Paper $paper)
-    // {
-    //     // Authorization and ownership checks here
-    //     return view('phpapers.paper.edit', compact('workspace', 'paper'));
-    // }
 
-    // public function update(Request $request, Workspace $workspace, Paper $paper)
-    // {
-    //     // Validate and update notes or paper metadata
-    // }
+
 
 }

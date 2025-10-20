@@ -34,7 +34,7 @@ Route::delete('/workspaces/{workspace}/papers/{paper}', [PaperController::class,
 Route::get('/workspace/{workspace}/paper/{paper}', [PaperController::class, 'show'])->name('paper.show')->scopeBindings();
 
 //show wysiwig editor
-Route::post('/workspace/{workspace}/paper/{paper}/save', [PaperController::class, 'autosave'])->name('paper.save')->scopeBindings();
+Route::post('/workspace/{workspace}/paper/{paper}/save', [PaperController::class, 'save'])->name('paper.save')->scopeBindings();
 
 
 Route::get('/editor/{workspace}/{paper}', function (Workspace $workspace, Paper $paper) {
