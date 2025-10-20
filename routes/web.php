@@ -20,7 +20,10 @@ Route::delete('/{workspace}', [WorkspaceController::class, 'destroy'])->name('wo
 Route::post('/workspace', [WorkspaceController::class, 'store'])->name(('workspace.store'));
 
 //Delete a paper
-Route::delete('/workspaces/{workspace}/papers/{paper}', [PaperController::class, 'destroy'])->name('paper.destroy');
+Route::delete('/workspaces/{workspace}/papers/{paper}', [PaperController::class, 'destroy'])->name('paper.destroy')->scopeBindings();
+
+//create a paper
+Route::post('/{workspace}', [PaperController::class, 'store'])->name('paper.store')->scopeBindings();
 
 
 

@@ -6,7 +6,7 @@
 
             <head>
                 <meta charset="UTF-8">
-                <title>{{ $title ?? 'phphapers' }}</title>
+                <title>{{ $title ?? 'phpapers' }}</title>
                 <link rel="icon" href="{{ asset('favicon-2.ico') }}" type="image/x-icon">
 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,19 +28,21 @@
 
 
                 <header class="bg-slate-100 border-b border-slate-300">
-                    <a href="{{ route('home') }}">
-                        <div class="max-w-6xl mx-auto px-4 py-4">
+                    <div class="max-w-6xl mx-auto px-4 py-4">
+                        <a href="{{ route('home') }}">
                             <h1 class="text-2xl font-light tracking-wide text-slate-700">
-                                phphapers
+                                phpapers
                             </h1>
-                    </a>
+                        </a>
                     </div>
                 </header>
                 <main class="flex-1 w-full">
-                    {{-- Toggle bar outside the content container --}}
+                    {{-- Toggle bar outside the main container --}}
                     <div class="w-full flex justify-end items-center px-4 py-2 bg-slate-50">
                         <div class="flex items-center gap-4">
-                            {{ $toggle ?? '' }}
+                            @isset($toggle)
+                                {{ $toggle }}
+                            @endisset
                         </div>
                     </div>
 

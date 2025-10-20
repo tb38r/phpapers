@@ -2,14 +2,14 @@
     <div class="p-4 border rounded shadow flex flex-col justify-between">
         <div>
             <a href="{{ route('workspace.show', $workspace->id) }}">
-                <h3 class="text-lg font-semibold">{{ $workspace->name }}</h3>
+                <div class="text-l font-semibold">{{ $workspace->name }}</div>
                 <p>{{ $workspace->description }}</p>
             </a>
         </div>
         <form method="POST" action="{{ route('workspace.destroy', $workspace->id) }}" class="mt-4 flex justify-end">
             @csrf
             @method('DELETE')
-                  <button type="submit" class="text-pink-400 hover:text-red-600">
+            <button type="submit" class="text-pink-400 hover:text-red-600">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-5">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -22,8 +22,7 @@
     </div>
 @else
     <li class="border-b pb-2 flex justify-between items-center">
-        <div>
-            <a href="{{ route('workspace.show', $workspace->id) }}">
+        <div class="w-5/6"> <a href="{{ route('workspace.show', $workspace->id) }}">
                 <h3 class="text-lg font-semibold">{{ $workspace->name }}</h3>
                 <p>{{ $workspace->description }}</p>
 

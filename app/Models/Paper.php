@@ -10,7 +10,7 @@ class Paper extends Model
     /** @use HasFactory<\Database\Factories\PapersFactory> */
     use HasFactory;
 
-   protected $fillable = ['title', 'content'];
+   protected $fillable = ['title', 'content', 'workspace_id'];
 
 
     public function workspace()

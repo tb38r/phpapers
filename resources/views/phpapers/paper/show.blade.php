@@ -1,4 +1,5 @@
 <x-layout title="{{ $workspace->name }}">
+    
     <h1>{{ $workspace->name }}</h1>
     <p>{{ $workspace->description }}</p>
 
@@ -9,6 +10,7 @@
     <br>
     <ul>
         @foreach ($workspace->papers as $paper)
+        
             <li>{{ $paper->content }}</li>
         @endforeach
     </ul>
