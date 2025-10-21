@@ -6,7 +6,7 @@
             <div class="relative h-6 border-b border-gray-200">
                 @if ($i === 2)
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <span class="bg-white px-2 text-gray-700 text-sm font-medium">
+                        <span class="bg-white px-2 text-gray-700 text-sm font-medium" style="font-family: 'Comic Sans MS'; text-transform: lowercase;" >
                             {{ $paper->title }}
                         </span>
                     </div>

@@ -20,7 +20,6 @@
                     </span>
                 </span>
             </summary>
-            {{-- <form method="POST" action="{{ route('paper.store', $workspace) }}"> --}}
 
             <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                 <div
