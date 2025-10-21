@@ -23,7 +23,7 @@
     </x-slot>
 
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-semibold text-slate-700">Workspaces</h2>
+        <h2 class="major-title">Workspaces</h2>
 
         <details class="relative z-50 group">
             <summary class="cursor-pointer text-blue-300 hover:text-blue-600 text-2xl font-bold relative"
@@ -36,33 +36,35 @@
 
                     <span
                         class="absolute right-full top-1/2 -translate-y-1/2 mr-2 px-2 py-1 text-xs text-white bg-gray-800 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition">
-                        Create new workspace
+                        create new workspace
                     </span>
                 </span>
             </summary>
 
             <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                <div class="bg-white p-6 rounded shadow-lg w-[360px] h-[240px] relative">
-                    <form method="POST" action="{{ route('workspace.store') }}">
+                <div class="bg-white rounded shadow-lg w-[400px] h-[310px] p-6 relative flex items-center justify-evenly">
+                    <form method="POST" action="{{ route('workspace.store') }}" class="w-full">
                         @csrf
+                        <div class="mb-3 minor-title" >
+                            New workspace</div>
                         <div class="mb-2">
-                            <label for="name" class="block text-sm font-medium text-slate-600">Name</label>
+                            <label for="name" class="block text-sm font-medium text-slate-600">name</label>
                             <input type="text" name="name" id="name" required
                                 class="w-full border px-3 py-2 rounded">
                         </div>
                         <div class="mb-2">
                             <label for="description"
-                                class="block text-sm font-medium text-slate-600">Description</label>
+                                class="block text-sm font-medium text-slate-600">description</label>
                             <textarea name="description" id="description" rows="2" class="w-full border px-3 py-2 rounded"></textarea>
                         </div>
                         <div class="flex justify-end space-x-2 mt-4">
                             <button type="submit"
-                                class="text-sm text-white bg-blue-600 hover:bg-blue-700 px-2 py-2 rounded">
-                                Create
+                                class="text-sm text-white bg-blue-600 hover:bg-blue-700 px-1 py-1 rounded">
+                                create
                             </button>
                             <button type="reset" onclick="this.closest('details').removeAttribute('open')"
                                 class="text-sm text-slate-500 hover:underline">
-                                Cancel
+                                cancel
                             </button>
                         </div>
                     </form>

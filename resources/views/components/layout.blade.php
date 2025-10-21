@@ -1,6 +1,7 @@
         @php use Illuminate\Support\Str; @endphp
 
 
+
         <!DOCTYPE html>
         <html lang="en">
 
@@ -8,6 +9,8 @@
                 <meta charset="UTF-8">
                 <title>{{ $title ?? 'phpapers' }}</title>
                 <link rel="icon" href="{{ asset('favicon-2.ico') }}" type="image/x-icon">
+                <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,7 +18,7 @@
                 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
             </head>
 
-<body class="bg-slate-50 text-slate-800 h-screen overflow-hidden flex flex-col">
+            <body class="bg-slate-50 text-slate-800 h-screen overflow-hidden flex flex-col">
 
 
                 @foreach (session()->all() as $key => $value)

@@ -1,0 +1,13 @@
+.minor-title {
+    text-transform: lowercase;
+    color: lightsteelblue;
+    font-weight: 200;
+}
+
+
+.major-title {
+  text-transform: lowercase;
+  color: lightsteelblue;
+  font-weight: 600; 
+  font-size: 1.5rem; 
+}
