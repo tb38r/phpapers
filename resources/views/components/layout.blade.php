@@ -15,7 +15,7 @@
                 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
             </head>
 
-            <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 h-screen overflow-hidden flex flex-col">
 
 
                 @foreach (session()->all() as $key => $value)
