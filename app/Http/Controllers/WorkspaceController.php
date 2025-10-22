@@ -35,12 +35,26 @@ class WorkspaceController extends Controller
     {
 
         $validated = $request->validate([
-            'name' => 'required| string|max:50',
-            'description' => 'required| string|max:255',
+            'name' => 'required|string|max:50',
+            'description' => 'required|string|max:255',
 
 
         ]);
         Workspace::create($validated);
         return redirect()->route('home')->with('create-status', 'Workspace ' . $validated['name'] . ' created');
+    }
+
+    public function update(Request $request, Workspace $workspace)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:50',
+            'description' => 'required|string|max:255',
+
+
+        ]);
+
+        $workspace->update($validated);
+
+        return redirect()->back()->with('update-status', 'Workspace updated successfully');
     }
 }

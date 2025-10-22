@@ -23,6 +23,9 @@ Route::post('/workspace', [WorkspaceController::class, 'store'])->name(('workspa
 //Delete a workspace
 Route::delete('/{workspace}', [WorkspaceController::class, 'destroy'])->name('workspace.destroy');
 
+//update workspace details
+Route::put('/{workspace}', [WorkspaceController::class, 'update'])->name('workspace.update');
+
 
 //create a paper
 Route::post('/{workspace}', [PaperController::class, 'store'])->name('paper.store')->scopeBindings();
